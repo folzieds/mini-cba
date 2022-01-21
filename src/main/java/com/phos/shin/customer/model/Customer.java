@@ -5,6 +5,7 @@ package com.phos.shin.customer.model;
  * on 1/19/2022
  */
 
+import com.phos.shin.account.bank.model.BankAccount;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -21,5 +22,6 @@ public class Customer {
     private String address;
     private String phoneNumber;
     private LocalDate createdDate;
+    private BankAccount account;
 
 }
