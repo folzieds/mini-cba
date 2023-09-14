@@ -1,4 +1,4 @@
-package com.phos.seatarrangement.core.configuration;
+package com.phos.shin.core.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -10,23 +10,19 @@ import javax.sql.DataSource;
 @Configuration
 public class DatasourceConfig {
 
-    @Value("${phos.datasource.url}")
+    @Value("${shin.datasource.url}")
     private String url;
 
-    @Value("${phos.datasource.username}")
+    @Value("${shin.datasource.username}")
     private String username;
 
-    @Value("${phos.datasource.password}")
+    @Value("${shin.datasource.password}")
     private String password;
-
-    @Value("${phos.datasource.driver-class-name}")
-    private String driver;
 
     @Bean
     public DataSource datasource(){
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
 
-        dataSourceBuilder.driverClassName(driver);
         dataSourceBuilder.url(url);
         dataSourceBuilder.username(username);
         dataSourceBuilder.password(password);
